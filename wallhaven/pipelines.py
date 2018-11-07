@@ -23,6 +23,14 @@ class ImagePipeline(ImagesPipeline):
         return file_name
 
     def item_completed(self, results, item, info):
+        #[(True, {'url': 'https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-704981.jpg', 'path': 'wallhaven-704981.jpg', \
+        #  'checksum': '9cca2638f23b53af592ba68cc98d6dfd'})]
+        print("results:")
+        print(results)
+        print("item:")
+        print(item)
+        print("info:")
+        print(info)
         image_paths = [x['path'] for ok, x in results if ok]
         if not image_paths:
             raise DropItem('Image Downloaded Failed')

@@ -26,6 +26,11 @@ IMAGES_STORE = './images'
 ITEM_PIPELINES = {
     'wallhaven.pipelines.ImagePipeline' : 301
 }
+
+FEED_URI = 'export_data/%(name)s.data'
+FEED_FORMAT = 'csv'
+FEED_EXPORT_ENCODING = 'gbk'
+FEED_EXPORT_FIELDS = ['author', 'tages', 'url']
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
